@@ -1,65 +1,47 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CSS Grid з grid-column: span</title>
+	<meta charset="utf-8">
+	<title>grid-row-start</title>
 	<style>
-		/* Контейнер з сіткою */
+		body {
+			margin: 0;
+
+		}
+
 		.container {
 			display: grid;
-			grid-template-columns: repeat(6, 1fr);
-			/* 6 рівних колонок */
-			gap: 10px;
-			/* Відступи між елементами */
-			margin: 20px;
+
+
+			grid-template-columns: repeat(2, 1fr);
+
 		}
 
-		/* Стиль для всіх карток */
-		.card {
-			background-color: #4CAF50;
+		.item1,
+		.item2 {
+			display: flex;
+			background-color: cadetblue;
 			color: white;
-			padding: 20px;
-			text-align: center;
-			border-radius: 5px;
+			font-size: 3em;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid yellow;
 		}
 
-		/* Картка, яка займає 1 колонку */
-		.places__card_1 {
-			grid-column: span 1;
-		}
-
-		/* Картка, яка займає 2 колонки */
-		.places__card_2 {
-			grid-column: span 2;
-		}
-
-		/* Картка, яка займає 3 колонки */
-		.places__card_3 {
-			grid-column: span 3;
-		}
-
-		/* Картка, яка займає всі 6 колонок */
-		.places__card_4 {
-			grid-column: span 6;
+		.item2 {
+			grid-row-start: -1;
 		}
 	</style>
 </head>
 
 <body>
-
 	<div class="container">
-		<!-- Картки різної ширини -->
-		<div class="card places__card_1">Картка 1 (1 колонка)</div>
-		<div class="card places__card_2">Картка 2 (2 колонки)</div>
-		<div class="card places__card_3">Картка 3 (3 колонки)</div>
-		<div class="card places__card_1">Картка 4 (1 колонка)</div>
-		<div class="card places__card_2">Картка 5 (2 колонки)</div>
-		<div class="card places__card_4">Картка 6 (весь ряд - 6 колонок)</div>
-		<div class="card places__card_1">Картка 7 (1 колонка)</div>
-	</div>
+		<div class="item1">1</div>
+		<div class="item2">2</div>
 
+
+	</div>
 </body>
 
 </html>
