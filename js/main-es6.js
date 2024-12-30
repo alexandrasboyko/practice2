@@ -18,10 +18,17 @@
   const menuLinks = document.querySelectorAll('.header__link');
   burgerItem.addEventListener('click', () => {
     menu.classList.add('header__nav_active');
-  })
+  });
   menuCloseItem.addEventListener('click', () => {
     menu.classList.remove('header__nav_active')
-  })
+  });
+  if(window.innerWidth <= 767) {
+    for(let i = 0; i < menuLinks.length; i++) {
+      menuLinks[i].addEventListener('click', () => {
+        menu.classList.remove('header__nav_active');
+      });
+    }
+  }
 }());
 
 // Scroll to anchors
